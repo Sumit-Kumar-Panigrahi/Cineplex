@@ -31,8 +31,9 @@ backup_pre_cineplex/
 Thumbs.db
 desktop.ini
 
-# IDE
-.vscode/
+# IDE — keep .vscode launch config, exclude personal settings
+!.vscode/
+.vscode/settings.json
 .idea/
 *.swp
 *.swo
