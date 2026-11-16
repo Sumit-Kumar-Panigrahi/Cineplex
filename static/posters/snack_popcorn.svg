@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="tub" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#be123c"/>
+      <stop offset="50%" stop-color="#e11d48"/>
+      <stop offset="100%" stop-color="#9f1239"/>
+    </linearGradient>
+    <linearGradient id="corn" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+  </defs>
+  <rect width="300" height="300" rx="16" fill="url(#bg)"/>
+  <circle cx="150" cy="150" r="110" fill="#f59e0b" fill-opacity="0.08"/>
+  
+  <!-- Popcorn Tub -->
+  <polygon points="90,140 210,140 195,245 105,245" fill="url(#tub)"/>
+  <!-- Tub stripes -->
+  <polygon points="110,140 125,140 120,245 110,245" fill="#ffffff" fill-opacity="0.9"/>
+  <polygon points="142,140 158,140 155,245 145,245" fill="#ffffff" fill-opacity="0.9"/>
+  <polygon points="175,140 190,140 180,245 170,245" fill="#ffffff" fill-opacity="0.9"/>
+  <ellipse cx="150" cy="140" rx="60" ry="12" fill="#881337"/>
+  
+  <!-- Popcorn Kernels Cloud -->
+  <circle cx="110" cy="125" r="22" fill="url(#corn)"/>
+  <circle cx="140" cy="115" r="26" fill="url(#corn)"/>
+  <circle cx="170" cy="118" r="24" fill="url(#corn)"/>
+  <circle cx="190" cy="130" r="20" fill="url(#corn)"/>
+  <circle cx="125" cy="95" r="24" fill="url(#corn)"/>
+  <circle cx="160" cy="90" r="28" fill="url(#corn)"/>
+  <circle cx="140" cy="72" r="22" fill="#fef08a"/>
+  
+  <text x="150" y="278" font-family="-apple-system, sans-serif" font-size="13" font-weight="800" fill="#f8fafc" text-anchor="middle" letter-spacing="1">SALTED POPCORN</text>
+</svg>

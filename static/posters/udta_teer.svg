@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="udta_teer_grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1c1032"/>
+      <stop offset="50%" stop-color="#431407"/>
+      <stop offset="100%" stop-color="#0d0619"/>
+    </linearGradient>
+    <radialGradient id="udta_teer_glow" cx="50%" cy="35%" r="50%">
+      <stop offset="0%" stop-color="#fb7185" stop-opacity="0.35"/>
+      <stop offset="70%" stop-color="#f43f5e" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="400" height="600" fill="url(#udta_teer_grad)"/>
+  <circle cx="200" cy="210" r="160" fill="url(#udta_teer_glow)"/>
+
+  <!-- Top Cinema Badges -->
+  <rect x="25" y="26" width="130" height="26" rx="5" fill="#000" stroke="#f43f5e" stroke-width="1.2"/>
+  <text x="90" y="44" fill="#f43f5e" font-family="system-ui, sans-serif" font-size="11" font-weight="800" text-anchor="middle">COMEDY • SATIRE • DRAMA</text>
+
+  <rect x="305" y="26" width="70" height="26" rx="5" fill="#000" stroke="#fb7185" stroke-width="1.2"/>
+  <text x="340" y="44" fill="#fb7185" font-family="system-ui, sans-serif" font-size="12" font-weight="900" text-anchor="middle">★ 8.1</text>
+
+  <!-- Center Emblem -->
+  <circle cx="200" cy="210" r="75" fill="#000" fill-opacity="0.4" stroke="#f43f5e" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="200" y="235" font-size="64" text-anchor="middle">🎯</text>
+
+  <!-- Bottom Title & Meta -->
+  <text x="200" y="415" fill="#f43f5e" font-family="system-ui, sans-serif" font-size="12" font-weight="800" letter-spacing="3" text-anchor="middle">COVERT MISSION OF PURE PANDEMONIUM</text>
+  <text x="200" y="470" fill="#ffffff" font-family="'Arial Black', Impact, sans-serif" font-size="40" font-weight="900" letter-spacing="2" text-anchor="middle">UDTA TEER</text>
+  <text x="200" y="508" fill="#fb7185" font-family="system-ui, sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle">UA 13+ • 128 MINS • HINDI</text>
+  <text x="200" y="540" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10" font-weight="600" text-anchor="middle">AYUSHMANN KHURRANA • SARA ALI KHAN</text>
+
+  <rect x="140" y="560" width="120" height="22" rx="4" fill="#ffffff" fill-opacity="0.12"/>
+  <text x="200" y="575" fill="#ffffff" font-family="system-ui, sans-serif" font-size="10" font-weight="800" text-anchor="middle">CINEPLEX PASS</text>
+</svg>

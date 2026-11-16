@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg_s" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="sam_c" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fde047"/>
+      <stop offset="60%" stop-color="#ca8a04"/>
+      <stop offset="100%" stop-color="#854d0e"/>
+    </linearGradient>
+  </defs>
+  <rect width="300" height="300" rx="16" fill="url(#bg_s)"/>
+  <circle cx="150" cy="150" r="110" fill="#ca8a04" fill-opacity="0.1"/>
+  
+  <!-- Plate -->
+  <ellipse cx="150" cy="215" rx="110" ry="28" fill="#1e293b" stroke="#334155" stroke-width="2"/>
+  
+  <!-- Left Samosa -->
+  <polygon points="100,110 55,215 155,215" fill="url(#sam_c)" stroke="#713f12" stroke-width="2"/>
+  <path d="M 55,215 Q 100,205 155,215" fill="#a16207"/>
+  
+  <!-- Right Samosa -->
+  <polygon points="180,115 130,220 235,215" fill="url(#sam_c)" stroke="#713f12" stroke-width="2"/>
+  <path d="M 130,220 Q 180,210 235,215" fill="#a16207"/>
+  
+  <!-- Mint chutney dip -->
+  <ellipse cx="150" cy="225" rx="20" ry="8" fill="#15803d"/>
+  
+  <text x="150" y="278" font-family="-apple-system, sans-serif" font-size="13" font-weight="800" fill="#f8fafc" text-anchor="middle" letter-spacing="1">HOT VEG SAMOSA</text>
+</svg>

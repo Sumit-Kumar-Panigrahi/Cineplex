@@ -1,0 +1,1480 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CINEPLEX | Your Movies. Your Moments.</title>
+  <link rel="stylesheet" href="/static/style.css?v=2.3">
+</head>
+
+<body>
+
+  <!-- PRODUCTION SVG SYMBOL SPRITE -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none;">
+    <symbol id="icon-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="11" cy="11" r="7.5"></circle>
+      <line x1="21" y1="21" x2="16.5" y2="16.5"></line>
+    </symbol>
+    <symbol id="icon-location" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 2a7.5 7.5 0 0 0-7.5 7.5c0 5.25 7.5 12.5 7.5 12.5s7.5-7.25 7.5-12.5A7.5 7.5 0 0 0 12 2z"></path>
+      <circle cx="12" cy="9.5" r="2.5"></circle>
+    </symbol>
+    <symbol id="icon-ticket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 9a2.5 2.5 0 0 1 0 5v3a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-3a2.5 2.5 0 0 1 0-5V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v3z"></path>
+      <line x1="12" y1="5" x2="12" y2="7"></line>
+      <line x1="12" y1="11" x2="12" y2="13"></line>
+      <line x1="12" y1="17" x2="12" y2="19"></line>
+    </symbol>
+    <symbol id="icon-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 2l7 3.5v6c0 5-3.5 9.5-7 10.5-3.5-1-7-5.5-7-10.5v-6L12 2z"></path>
+    </symbol>
+    <symbol id="icon-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+      <circle cx="12" cy="7" r="4"></circle>
+    </symbol>
+    <symbol id="icon-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+      <circle cx="9" cy="7" r="4"></circle>
+      <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+      <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+    </symbol>
+    <symbol id="icon-signout" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+      <polyline points="16 17 21 12 16 7"></polyline>
+      <line x1="21" y1="12" x2="9" y2="12"></line>
+    </symbol>
+    <symbol id="icon-cloud" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+    </symbol>
+    <symbol id="icon-sparkles" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 2l2.4 5.6L20 10l-5.6 2.4L12 18l-2.4-5.6L4 10l5.6-2.4z"></path>
+    </symbol>
+    <symbol id="icon-bolt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+    </symbol>
+    <symbol id="icon-film" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect>
+      <line x1="7" y1="2" x2="7" y2="22"></line>
+      <line x1="17" y1="2" x2="17" y2="22"></line>
+      <line x1="2" y1="12" x2="22" y2="12"></line>
+      <line x1="2" y1="7" x2="7" y2="7"></line>
+      <line x1="2" y1="17" x2="7" y2="17"></line>
+      <line x1="17" y1="17" x2="22" y2="17"></line>
+      <line x1="17" y1="7" x2="22" y2="7"></line>
+    </symbol>
+    <symbol id="icon-theater" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 21h18M3 10h18M5 10v11M9 10v11M15 10v11M19 10v11M12 3l9 7H3l9-7z"></path>
+    </symbol>
+    <symbol id="icon-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"></circle>
+      <polyline points="12 6 12 12 16 14"></polyline>
+    </symbol>
+    <symbol id="icon-star" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+    </symbol>
+    <symbol id="icon-play" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+      <polygon points="6 4 20 12 6 20 6 4"></polygon>
+    </symbol>
+    <symbol id="icon-printer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="6 9 6 2 18 2 18 9"></polyline>
+      <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+      <rect x="6" y="14" width="12" height="8"></rect>
+    </symbol>
+    <symbol id="icon-pdf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+      <polyline points="14 2 14 8 20 8"></polyline>
+      <line x1="16" y1="13" x2="8" y2="13"></line>
+      <line x1="16" y1="17" x2="8" y2="17"></line>
+      <polyline points="10 9 9 9 8 9"></polyline>
+    </symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="18" y1="6" x2="6" y2="18"></line>
+      <line x1="6" y1="6" x2="18" y2="18"></line>
+    </symbol>
+    <symbol id="icon-refresh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="23 4 23 10 17 10"></polyline>
+      <polyline points="1 20 1 14 7 14"></polyline>
+      <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+    </symbol>
+    <symbol id="icon-edit" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+      <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+    </symbol>
+    <symbol id="icon-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+      <circle cx="12" cy="12" r="3"></circle>
+    </symbol>
+    <symbol id="icon-eye-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+      <line x1="1" y1="1" x2="23" y2="23"></line>
+    </symbol>
+    <symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="20 6 9 17 4 12"></polyline>
+    </symbol>
+    <symbol id="icon-arrow-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="19" y1="12" x2="5" y2="12"></line>
+      <polyline points="12 19 5 12 12 5"></polyline>
+    </symbol>
+    <symbol id="icon-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="6 9 12 15 18 9"></polyline>
+    </symbol>
+    <symbol id="icon-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="12" y1="5" x2="12" y2="19"></line>
+      <line x1="5" y1="12" x2="19" y2="12"></line>
+    </symbol>
+    <symbol id="icon-timer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="13" r="8"></circle>
+      <polyline points="12 9 12 13 14 15"></polyline>
+      <line x1="12" y1="2" x2="12" y2="5"></line>
+    </symbol>
+    <symbol id="icon-popcorn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M7 11h10l-1.5 10h-7L7 11z"></path>
+      <path d="M5 8a2.5 2.5 0 0 1 4.5-1.5 3 3 0 0 1 5 0A2.5 2.5 0 0 1 19 8a2.5 2.5 0 0 1-2 2.5H7A2.5 2.5 0 0 1 5 8z"></path>
+    </symbol>
+    <symbol id="icon-table" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+      <line x1="3" y1="9" x2="21" y2="9"></line>
+      <line x1="3" y1="15" x2="21" y2="15"></line>
+      <line x1="9" y1="9" x2="9" y2="21"></line>
+      <line x1="15" y1="9" x2="15" y2="21"></line>
+    </symbol>
+    <symbol id="icon-terminal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="4 17 10 11 4 5"></polyline>
+      <line x1="12" y1="19" x2="20" y2="19"></line>
+    </symbol>
+  </svg>
+
+  <!-- CINEPLEX TOP NAVBAR -->
+  <header class="bms-navbar">
+    <div class="nav-left">
+      <div class="cpx-logo" onclick="switchView('movies')">
+        <div class="cpx-logo-text">
+          <span class="logo-cine">CINE</span><span class="logo-plex">PLEX</span>
+        </div>
+        <span class="cpx-tagline">Your Movies. Your Moments.</span>
+      </div>
+
+      <div class="bms-search-wrap" id="bmsSearchWrap">
+        <span class="search-icon">
+          <svg class="cpx-icon"><use href="#icon-search"></use></svg>
+        </span>
+        <input type="text" id="searchInput" placeholder="Search for Movies, Hindi, Odia, English, Theaters..." autocomplete="off">
+        <button id="searchClearBtn" class="search-clear-btn" type="button" onclick="clearSearchInput()" style="display:none;" aria-label="Clear search">
+          <svg class="cpx-icon cpx-icon-sm"><use href="#icon-close"></use></svg>
+        </button>
+        <div id="searchDropdown" class="cpx-search-dropdown" style="display:none;"></div>
+      </div>
+    </div>
+
+    <div class="nav-right">
+      <div class="bms-city-select">
+        <svg class="cpx-icon cpx-icon-sm" style="color:var(--cpx-red);"><use href="#icon-location"></use></svg>
+        <select id="citySelector">
+          <option value="Bhubaneswar" selected>Bhubaneswar</option>
+          <option value="Cuttack">Cuttack</option>
+          <option value="Puri">Puri</option>
+          <option value="Rourkela">Rourkela</option>
+          <option value="Mumbai">Mumbai</option>
+          <option value="Delhi-NCR">Delhi-NCR</option>
+          <option value="Bengaluru">Bengaluru</option>
+          <option value="Kolkata">Kolkata</option>
+        </select>
+      </div>
+
+      <button class="btn-bms-red" onclick="switchView('bookings')">
+        <svg class="cpx-icon"><use href="#icon-ticket"></use></svg>
+        <span>My Bookings</span>
+        <span id="navBookingsCount"
+          style="background:#fff; color:var(--cpx-red); padding:0.1rem 0.4rem; border-radius:99px; font-size:0.7rem; font-weight:800; margin-left:0.3rem; display:none;">0</span>
+      </button>
+
+      <button class="btn-bms-red" style="background:#334155;" onclick="switchView('admin')">
+        <svg class="cpx-icon"><use href="#icon-shield"></use></svg>
+        <span>Admin &amp; Tools</span>
+      </button>
+
+      <!-- AUTH BUTTON: shown/hidden by JS -->
+      <div id="navUserArea" style="position:relative;">
+        <!-- Logged OUT -->
+        <button id="navLoginBtn" onclick="switchView('auth')" style="background:var(--cpx-red); color:#fff; border:none; padding:0.45rem 1rem;
+                 border-radius:6px; font-size:0.82rem; font-weight:700; cursor:pointer;">
+          Sign In
+        </button>
+        <!-- Logged IN (hidden by default) -->
+        <div id="navUserChip" style="display:none; align-items:center; gap:0.5rem; cursor:pointer;"
+          onclick="toggleUserMenu()">
+          <div id="navUserAvatar" style="width:32px; height:32px; border-radius:50%; background:var(--cpx-red);
+                      color:#fff; display:flex; align-items:center; justify-content:center;
+                      font-weight:800; font-size:0.85rem;">S</div>
+          <span id="navUserName" style="color:#fff; font-size:0.82rem; font-weight:700;">Sumit</span>
+          <svg class="cpx-icon cpx-icon-xs" style="color:#94a3b8;"><use href="#icon-chevron-down"></use></svg>
+        </div>
+        <!-- Dropdown -->
+        <div id="userDropdown" style="display:none; position:absolute; top:46px; right:0;
+             background:#fff; border-radius:8px; box-shadow:var(--shadow-lg);
+             min-width:200px; z-index:999; overflow:hidden; border:1px solid #e2e8f0;">
+          <div style="padding:0.75rem 1rem; border-bottom:1px solid #f1f5f9;">
+            <div id="dropUserName" style="font-weight:800; color:#0f172a; font-size:0.9rem;"></div>
+            <div id="dropUserEmail" style="font-size:0.75rem; color:#64748b; margin-top:2px;"></div>
+          </div>
+          <button onclick="switchView('auth'); closeUserMenu()" style="width:100%; padding:0.65rem 1rem; text-align:left; background:none; border:none;
+                    cursor:pointer; font-size:0.85rem; color:#334155; font-weight:600; display:flex; align-items:center; gap:0.5rem;">
+            <svg class="cpx-icon cpx-icon-sm" style="color:#64748b;"><use href="#icon-user"></use></svg>
+            <span>My Account &amp; Profile</span>
+          </button>
+          <button onclick="switchView('bookings'); closeUserMenu()" style="width:100%; padding:0.65rem 1rem; text-align:left; background:none; border:none;
+                    cursor:pointer; font-size:0.85rem; color:#334155; font-weight:600; display:flex; align-items:center; gap:0.5rem;">
+            <svg class="cpx-icon cpx-icon-sm" style="color:#64748b;"><use href="#icon-ticket"></use></svg>
+            <span>My Bookings</span>
+          </button>
+          <button onclick="switchView('admin'); closeUserMenu()" style="width:100%; padding:0.65rem 1rem; text-align:left; background:none; border:none;
+                    cursor:pointer; font-size:0.85rem; color:#334155; font-weight:600; display:flex; align-items:center; gap:0.5rem;">
+            <svg class="cpx-icon cpx-icon-sm" style="color:#64748b;"><use href="#icon-shield"></use></svg>
+            <span>Management &amp; Tools</span>
+          </button>
+          <button onclick="authLogout()" style="width:100%; padding:0.65rem 1rem; text-align:left; background:none; border:none;
+                    cursor:pointer; font-size:0.85rem; color:#be123c; font-weight:700; border-top:1px solid #f1f5f9; display:flex; align-items:center; gap:0.5rem;">
+            <svg class="cpx-icon cpx-icon-sm" style="color:#be123c;"><use href="#icon-signout"></use></svg>
+            <span>Sign Out</span>
+          </button>
+        </div>
+      </div>
+
+      <button
+        style="background:transparent; border:1px solid #64748b; color:#fff; padding:0.35rem 0.65rem; border-radius:4px; font-size:0.75rem; cursor:pointer; display:flex; align-items:center; gap:0.4rem;"
+        onclick="openModal('tmdbConfigModal')">
+        <svg class="cpx-icon cpx-icon-sm"><use href="#icon-cloud"></use></svg>
+        <span>TMDB Sync</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- SUB-NAVBAR -->
+  <nav class="bms-subnav">
+    <div class="subnav-links">
+      <a href="javascript:void(0)" class="active" id="subnavMoviesLink" onclick="switchView('movies')">Movies</a>
+      <a href="javascript:void(0)" id="subnavBookingsLink" onclick="switchView('bookings')">My Bookings</a>
+      <a href="javascript:void(0)" id="subnavAccountLink" onclick="switchView('auth')">Account &amp; Profile</a>
+      <a href="javascript:void(0)" id="subnavAdminLink" onclick="switchView('admin')">Management Portal</a>
+    </div>
+    <div style="display:flex; align-items:center; gap:0.75rem;">
+      <span class="subnav-exp-pill" onclick="toast('Cinema Experiences: IMAX 3D • 4DX • Dolby Atmos • Cineplex Gold Lounge active across all screens', 'info')">
+        <svg class="cpx-icon cpx-icon-xs"><use href="#icon-sparkles"></use></svg> IMAX &amp; 4DX Experiences
+      </span>
+      <div style="font-size:0.75rem; color:#94a3b8;" class="subnav-badge">
+        <svg class="cpx-icon cpx-icon-xs" style="color:var(--cpx-amber);"><use href="#icon-bolt"></use></svg> Cineplex Platform • High-Performance Relational Engine • Instant Digital Pass
+      </div>
+    </div>
+  </nav>
+
+  <!-- =========================================================================
+       VIEW 1: MOVIES DISCOVERY & CATALOGUE
+       ========================================================================= -->
+  <div id="moviesView">
+    <!-- HERO CAROUSEL / PROMO BANNER -->
+    <div class="bms-carousel-wrap">
+      <div class="bms-promo-card" id="heroBanner">
+        <div class="promo-overlay"></div>
+        <div class="promo-inner">
+          <div class="promo-poster-side">
+            <img id="heroPosterThumb" src="/static/posters/interstellar.svg" alt="Featured Poster" class="hero-poster-img"
+                 onerror="this.onerror=null;this.src='/static/posters/interstellar.svg';">
+          </div>
+          <div class="promo-content">
+            <div class="promo-tag-row">
+              <span class="promo-tag">
+                <svg class="cpx-icon cpx-icon-xs star-gold"><use href="#icon-star"></use></svg> FEATURED BLOCKBUSTER
+              </span>
+              <span class="promo-pill" id="heroCert">UA 13+</span>
+            </div>
+            <h1 class="promo-title" id="heroTitle">Interstellar</h1>
+            <div class="promo-meta">
+              <span class="promo-rating-pill" id="heroRating">
+                <svg class="cpx-icon cpx-icon-xs star-gold"><use href="#icon-star"></use></svg> <span id="heroRatingVal">9.4/10 (210K Votes)</span>
+              </span>
+              <span class="meta-dot">•</span>
+              <span id="heroLang">English, Hindi</span>
+              <span class="meta-dot">•</span>
+              <span id="heroRuntime">169 mins</span>
+              <span class="meta-dot">•</span>
+              <span id="heroGenres">Sci-Fi, Adventure, Drama</span>
+            </div>
+            <p class="promo-desc" id="heroOverview">When Earth becomes uninhabitable, a team of explorers travel through a wormhole across space and time in an attempt to ensure humanity's survival. Directed by Christopher Nolan.</p>
+            <div class="promo-actions">
+              <button class="btn-bms-red" id="heroBtnBook" style="padding:0.7rem 1.6rem; font-size:0.95rem; font-weight:800; box-shadow:0 4px 14px rgba(225,29,72,0.4);">
+                <svg class="cpx-icon"><use href="#icon-ticket"></use></svg>
+                <span>Book Tickets</span>
+              </button>
+              <button class="btn-hero-trailer" id="heroBtnTrailer">
+                <svg class="cpx-icon cpx-icon-sm"><use href="#icon-play"></use></svg>
+                <span>Watch Trailer</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Carousel navigation arrows & indicators -->
+        <button class="hero-nav-btn prev" id="heroPrevBtn" onclick="prevHeroMovie()" aria-label="Previous Featured Movie">&#10094;</button>
+        <button class="hero-nav-btn next" id="heroNextBtn" onclick="nextHeroMovie()" aria-label="Next Featured Movie">&#10095;</button>
+        <div class="hero-indicators" id="heroDots"></div>
+      </div>
+    </div>
+
+    <!-- MAIN MOVIE SECTION WITH FILTERS -->
+    <main class="bms-container">
+      <div class="bms-filter-section">
+        <!-- ROW 1: STATUS & LANGUAGE FILTER -->
+        <div class="filter-row">
+          <div style="display:flex; align-items:center; gap:0.85rem; flex-wrap:wrap;">
+            <div class="bms-tabs">
+              <button class="bms-tab-btn active" data-status="now_showing">Now Showing</button>
+              <button class="bms-tab-btn" data-status="upcoming">Upcoming</button>
+              <button class="bms-tab-btn" data-status="popular">Popular &amp; Classics</button>
+            </div>
+
+            <div class="filter-label">Language:</div>
+            <div class="bms-chips" id="langChips">
+              <span class="bms-chip active" data-lang="All">All</span>
+              <span class="bms-chip" data-lang="Hindi">Hindi (हिंदी)</span>
+              <span class="bms-chip" data-lang="Odia">Odia (ଓଡ଼ିଆ)</span>
+              <span class="bms-chip" data-lang="English">English</span>
+              <span class="bms-chip" data-lang="Telugu">Telugu</span>
+              <span class="bms-chip" data-lang="Tamil">Tamil</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ROW 2: GENRE FILTER -->
+        <div class="filter-row">
+          <div style="display:flex; align-items:center; gap:0.65rem; flex-wrap:wrap;">
+            <div class="filter-label">Genres:</div>
+            <div class="bms-chips" id="genreChips">
+              <span class="bms-chip active" data-genre="All">All</span>
+              <span class="bms-chip" data-genre="Action">Action</span>
+              <span class="bms-chip" data-genre="Drama">Drama</span>
+              <span class="bms-chip" data-genre="Sci-Fi">Sci-Fi</span>
+              <span class="bms-chip" data-genre="Thriller">Thriller</span>
+              <span class="bms-chip" data-genre="Comedy">Comedy</span>
+              <span class="bms-chip" data-genre="Crime">Crime</span>
+              <span class="bms-chip" data-genre="Romance">Romance</span>
+              <span class="bms-chip" data-genre="Horror">Horror</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MOVIES GRID -->
+      <div class="section-heading-row">
+        <h2 class="section-title" id="gridHeading">Movies in <span id="headingCityName">Bhubaneswar</span></h2>
+        <span style="font-size:0.85rem; color:var(--cpx-red); font-weight:800; cursor:pointer;"
+          onclick="clearFilters()">Reset Filters ↺</span>
+      </div>
+
+      <div class="bms-movie-grid" id="movieGrid"></div>
+    </main>
+  </div>
+
+  <!-- =========================================================================
+       VIEW 2: MY BOOKINGS & CANCELLATIONS DASHBOARD
+       ========================================================================= -->
+  <div id="bookingsView" style="display:none;">
+    <main class="bms-container" style="max-width:980px; margin-top:1.5rem;">
+      <div
+        style="background:#fff; border:1px solid var(--border-light); border-radius:var(--radius-sm); padding:1.5rem; margin-bottom:1.5rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+        <div>
+          <h1 style="font-size:1.6rem; font-weight:900; color:var(--text-dark);">Purchase History &amp; Tickets</h1>
+          <p style="font-size:0.85rem; color:#64748b;">View Cineplex M-Tickets or cancel reservations with instant refund tracking.</p>
+        </div>
+        <div style="display:flex; gap:0.5rem; align-items:center;">
+          <div class="bms-tabs">
+            <button class="bms-tab-btn my-bookings-tab active" onclick="filterBookings('ALL', this)">All</button>
+            <button class="bms-tab-btn my-bookings-tab" onclick="filterBookings('CONFIRMED', this)">Active Tickets</button>
+            <button class="bms-tab-btn my-bookings-tab" onclick="filterBookings('CANCELLED', this)">Cancelled</button>
+          </div>
+          <button class="btn-bms-red" style="background:#f1f5f9; color:#334155;" onclick="switchView('movies')">← Back to Movies</button>
+        </div>
+      </div>
+
+      <div id="bookingsList" style="display:flex; flex-direction:column; gap:1rem;"></div>
+    </main>
+  </div>
+
+  <!-- =========================================================================
+       VIEW 3: LOGIN / REGISTER & USER ACCOUNT PAGE
+       ========================================================================= -->
+  <div id="authView" style="display:none;">
+    <main class="bms-container" style="max-width:980px; margin-top:1.5rem; margin-bottom:3rem;">
+
+      <!-- Top Action Bar -->
+      <div
+        style="background:#fff; border:1px solid var(--border-light); border-radius:var(--radius-sm); padding:1.25rem 1.5rem; margin-bottom:1.5rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+        <div>
+          <h1 style="font-size:1.5rem; font-weight:900; color:var(--text-dark); margin:0;" id="authPageHeading">User Authentication &amp; Profile</h1>
+          <p style="font-size:0.82rem; color:#64748b; margin:0.25rem 0 0 0;">Zero-Credential Authentication Engine synchronized with SQLite backend database.</p>
+        </div>
+        <div style="display:flex; gap:0.5rem; align-items:center;">
+          <span
+            style="font-size:0.75rem; background:#ecfdf5; color:#047857; font-weight:800; padding:0.35rem 0.75rem; border-radius:20px; border:1px solid #a7f3d0; display:inline-flex; align-items:center; gap:0.3rem;">
+            <span style="width:7px; height:7px; border-radius:50%; background:#10b981; display:inline-block;"></span>
+            Auto-Sync Connected
+          </span>
+          <button class="btn-bms-red" style="background:#f1f5f9; color:#334155;" onclick="switchView('movies')">← Back to Movies</button>
+        </div>
+      </div>
+
+      <!-- STATE A: WHEN LOGGED OUT (SIGN IN & REGISTER FORMS) -->
+      <div id="authPageLoggedOut" style="display:block;">
+        <div
+          style="max-width:540px; margin:0 auto; background:#fff; border:1px solid var(--border-light); border-radius:12px; box-shadow:var(--shadow-md); overflow:hidden;">
+          <!-- Card Header Banner -->
+          <div
+            style="background:linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color:#fff; padding:2rem 2rem 1.5rem 2rem; text-align:center; border-bottom:3px solid var(--cpx-red);">
+            <div style="margin-bottom:0.4rem;"><svg class="cpx-icon cpx-icon-xl" style="color:var(--cpx-red);"><use href="#icon-film"></use></svg></div>
+            <h2 style="font-size:1.5rem; font-weight:900; margin:0 0 0.4rem 0;">CINEPLEX Account</h2>
+            <p style="font-size:0.85rem; color:#cbd5e1; margin:0;">Sign in to manage your tickets, access M-Tickets, and speed up checkout.</p>
+          </div>
+
+          <!-- Switcher Tabs -->
+          <div style="display:flex; border-bottom:2px solid #f1f5f9; background:#f8fafc;">
+            <button id="authPageTabLogin" onclick="switchAuthPageTab('login')"
+              style="flex:1; padding:0.9rem; background:none; border:none; font-weight:800; font-size:0.95rem; cursor:pointer; color:var(--cpx-red); border-bottom:3px solid var(--cpx-red); margin-bottom:-2px; transition:all 0.2s;">
+              Sign In
+            </button>
+            <button id="authPageTabRegister" onclick="switchAuthPageTab('register')"
+              style="flex:1; padding:0.9rem; background:none; border:none; font-weight:800; font-size:0.95rem; cursor:pointer; color:#64748b; border-bottom:3px solid transparent; margin-bottom:-2px; transition:all 0.2s;">
+              Create New Account
+            </button>
+          </div>
+
+          <div style="padding:2rem;">
+            <!-- 1. SIGN IN FORM -->
+            <div id="authPageLoginForm">
+              <div style="margin-bottom:1rem;">
+                <label style="display:block; font-size:0.8rem; font-weight:700; color:#334155; margin-bottom:0.35rem;">Email Address</label>
+                <input type="email" class="bms-input" id="pageLoginEmail" placeholder="Enter your registered email"
+                  value="sumit@example.com">
+              </div>
+
+              <div style="margin-bottom:1rem;">
+                <label style="display:block; font-size:0.8rem; font-weight:700; color:#334155; margin-bottom:0.35rem;">Password</label>
+                <div style="position:relative;">
+                  <input type="password" class="bms-input" id="pageLoginPassword" placeholder="Enter password"
+                    value="password123" style="padding-right:2.5rem;">
+                  <span onclick="togglePwd('pageLoginPassword',this)"
+                    style="position:absolute; right:0.75rem; top:50%; transform:translateY(-50%); cursor:pointer; display:flex; align-items:center; user-select:none;">
+                    <svg class="cpx-icon cpx-icon-sm" style="color:#64748b;"><use href="#icon-eye"></use></svg>
+                  </span>
+                </div>
+              </div>
+
+              <div
+                style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem; flex-wrap:wrap; gap:0.5rem;">
+                <label style="display:flex; align-items:center; gap:0.4rem; font-size:0.82rem; color:#475569; cursor:pointer;">
+                  <input type="checkbox" id="pageRememberMe" checked> Remember this device
+                </label>
+                <div style="display:flex; gap:0.4rem;">
+                  <button type="button" onclick="fillDemoLogin('sumit')"
+                    style="background:#ffe4e6; color:var(--cpx-red); border:1px solid #fecdd3; font-size:0.78rem; font-weight:800; padding:0.3rem 0.6rem; border-radius:4px; cursor:pointer; display:flex; align-items:center; gap:0.3rem;">
+                    <svg class="cpx-icon cpx-icon-xs"><use href="#icon-bolt"></use></svg> Demo (Sumit)
+                  </button>
+                  <button type="button" onclick="fillDemoLogin('admin')"
+                    style="background:#e0f2fe; color:#0369a1; border:1px solid #bae6fd; font-size:0.78rem; font-weight:800; padding:0.3rem 0.6rem; border-radius:4px; cursor:pointer; display:flex; align-items:center; gap:0.3rem;">
+                    <svg class="cpx-icon cpx-icon-xs"><use href="#icon-shield"></use></svg> Admin Demo
+                  </button>
+                </div>
+              </div>
+
+              <button class="btn-bms-red"
+                style="width:100%; padding:0.85rem; font-size:1rem; font-weight:900; border-radius:6px;"
+                onclick="pageAuthLogin()">
+                Sign In
+              </button>
+
+              <div style="text-align:center; margin-top:1.25rem; font-size:0.85rem; color:#64748b;">
+                Don't have an account yet? <a href="javascript:void(0)" onclick="switchAuthPageTab('register')"
+                  style="color:var(--cpx-red); font-weight:800; text-decoration:none;">Register for free &rarr;</a>
+              </div>
+            </div>
+
+            <!-- 2. REGISTER FORM -->
+            <div id="authPageRegisterForm" style="display:none;">
+              <div style="margin-bottom:1rem;">
+                <label style="display:block; font-size:0.8rem; font-weight:700; color:#334155; margin-bottom:0.35rem;">
+                  Full Name <span style="color:var(--cpx-red);">* (Must start with a letter)</span>
+                </label>
+                <input type="text" class="bms-input" id="pageRegName" placeholder="e.g. Sumit Kumar Panigrahi"
+                  oninput="validateNameInput(this)">
+              </div>
+
+              <div style="margin-bottom:1rem;">
+                <label style="display:block; font-size:0.8rem; font-weight:700; color:#334155; margin-bottom:0.35rem;">
+                  Email Address <span style="color:var(--cpx-red);">*</span>
+                </label>
+                <input type="email" class="bms-input" id="pageRegEmail" placeholder="e.g. sumit@example.com">
+              </div>
+
+              <div style="margin-bottom:1rem;">
+                <label style="display:block; font-size:0.8rem; font-weight:700; color:#334155; margin-bottom:0.35rem;">
+                  Mobile Number <span style="color:var(--cpx-red);">* (Strictly 10 digits)</span>
+                </label>
+                <input type="tel" class="bms-input" id="pageRegPhone"
+                  placeholder="Enter 10-digit mobile number" maxlength="13" inputmode="numeric"
+                  oninput="validatePhoneInput(this)">
+              </div>
+
+              <div style="margin-bottom:1rem;">
+                <label style="display:block; font-size:0.8rem; font-weight:700; color:#334155; margin-bottom:0.35rem;">
+                  Password <span style="color:var(--cpx-red);">* (Min 6 characters)</span>
+                </label>
+                <div style="position:relative;">
+                  <input type="password" class="bms-input" id="pageRegPassword" placeholder="Create a password"
+                    style="padding-right:2.5rem;">
+                  <span onclick="togglePwd('pageRegPassword',this)"
+                    style="position:absolute; right:0.75rem; top:50%; transform:translateY(-50%); cursor:pointer; display:flex; align-items:center; user-select:none;">
+                    <svg class="cpx-icon cpx-icon-sm" style="color:#64748b;"><use href="#icon-eye"></use></svg>
+                  </span>
+                </div>
+              </div>
+
+              <div style="margin-bottom:1.5rem;">
+                <label style="display:block; font-size:0.8rem; font-weight:700; color:#334155; margin-bottom:0.35rem;">
+                  Confirm Password <span style="color:var(--cpx-red);">*</span>
+                </label>
+                <input type="password" class="bms-input" id="pageRegConfirm" placeholder="Re-type password">
+              </div>
+
+              <button class="btn-bms-red"
+                style="width:100%; padding:0.85rem; font-size:1rem; font-weight:900; border-radius:6px;"
+                onclick="pageAuthRegister()">
+                Create Account &amp; Sync
+              </button>
+
+              <div style="text-align:center; margin-top:1.25rem; font-size:0.85rem; color:#64748b;">
+                Already have an account? <a href="javascript:void(0)" onclick="switchAuthPageTab('login')"
+                  style="color:var(--cpx-red); font-weight:800; text-decoration:none;">Sign In &rarr;</a>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STATE B: WHEN LOGGED IN (ACCOUNT DASHBOARD) -->
+      <div id="authPageLoggedIn" style="display:none;">
+        <div style="display:grid; grid-template-columns:1fr 2fr; gap:1.5rem; align-items:start;">
+
+          <!-- Left Column: User Profile Card -->
+          <div
+            style="background:#fff; border:1px solid var(--border-light); border-radius:12px; padding:1.75rem; box-shadow:var(--shadow-sm);">
+            <div style="text-align:center; padding-bottom:1.25rem; border-bottom:1px solid #f1f5f9;">
+              <div id="accAvatar"
+                style="width:72px; height:72px; border-radius:50%; background:linear-gradient(135deg, #e11d48, #be123c); color:#fff; font-size:2rem; font-weight:900; display:flex; align-items:center; justify-content:center; margin:0 auto 0.75rem auto; box-shadow:0 4px 14px rgba(225,29,72,0.3);">
+                S
+              </div>
+              <h2 id="accFullName" style="font-size:1.3rem; font-weight:900; color:var(--text-dark); margin:0 0 0.2rem 0;">Sumit Kumar Panigrahi</h2>
+              <div id="accEmail" style="font-size:0.82rem; color:#64748b;">sumit@example.com</div>
+              <div id="accPhone" style="font-size:0.82rem; color:#334155; font-weight:700; margin-top:0.25rem;">Verified Member</div>
+            </div>
+
+            <div
+              style="padding:1.25rem 0; border-bottom:1px solid #f1f5f9; font-size:0.82rem; color:#475569; display:flex; flex-direction:column; gap:0.5rem;">
+              <div style="display:flex; justify-content:space-between;">
+                <span>Account Role:</span>
+                <strong id="accRoleBadge" style="color:var(--cpx-red);">Standard Customer</strong>
+              </div>
+              <div style="display:flex; justify-content:space-between;">
+                <span>Account Status:</span>
+                <strong style="color:#059669;">Active &amp; Verified</strong>
+              </div>
+              <div style="display:flex; justify-content:space-between;">
+                <span>Preferred City:</span>
+                <strong id="accCity">Bhubaneswar</strong>
+              </div>
+            </div>
+
+            <!-- Quick Edit Form (Collapsible) -->
+            <div style="margin-top:1.25rem;">
+              <button class="btn-bms-red"
+                style="width:100%; background:#f1f5f9; color:#334155; font-size:0.82rem; padding:0.55rem; display:flex; align-items:center; justify-content:center; gap:0.4rem;"
+                onclick="toggleEditProfile()">
+                <svg class="cpx-icon cpx-icon-sm"><use href="#icon-edit"></use></svg> Edit Profile Info
+              </button>
+
+              <div id="editProfileSection"
+                style="display:none; margin-top:1rem; padding:1rem; background:#f8fafc; border-radius:6px; border:1px solid #e2e8f0;">
+                <label style="display:block; font-size:0.75rem; font-weight:700; margin-bottom:0.2rem;">Full Name</label>
+                <input type="text" id="editNameInput" class="bms-input"
+                  style="padding:0.4rem; font-size:0.82rem; margin-bottom:0.5rem;">
+                <label style="display:block; font-size:0.75rem; font-weight:700; margin-bottom:0.2rem;">10-digit Phone</label>
+                <input type="tel" id="editPhoneInput" class="bms-input" maxlength="13"
+                  style="padding:0.4rem; font-size:0.82rem; margin-bottom:0.75rem;">
+                <div style="display:flex; gap:0.5rem;">
+                  <button class="btn-bms-red" style="flex:1; padding:0.45rem; font-size:0.8rem;"
+                    onclick="saveProfileChanges()">Save</button>
+                  <button
+                    style="flex:1; padding:0.45rem; font-size:0.8rem; background:#e2e8f0; border:none; border-radius:4px; cursor:pointer;"
+                    onclick="toggleEditProfile()">Cancel</button>
+                </div>
+              </div>
+            </div>
+
+            <button class="btn-bms-red"
+              style="width:100%; background:#fff; border:1px solid #ef4444; color:#ef4444; margin-top:0.75rem; font-size:0.82rem; padding:0.55rem; display:flex; align-items:center; justify-content:center; gap:0.4rem;"
+              onclick="authLogout()">
+              <svg class="cpx-icon cpx-icon-sm"><use href="#icon-signout"></use></svg> Sign Out
+            </button>
+          </div>
+
+          <!-- Right Column: Synchronized Rest Data & Stats -->
+          <div>
+            <!-- Stats Row -->
+            <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:1rem; margin-bottom:1.5rem;">
+              <div
+                style="background:#fff; border:1px solid var(--border-light); border-radius:10px; padding:1.15rem; text-align:center; box-shadow:var(--shadow-sm);">
+                <div style="font-size:0.75rem; color:#64748b; font-weight:800; text-transform:uppercase;">Total Bookings</div>
+                <div id="statTotalBookings" style="font-size:1.8rem; font-weight:900; color:var(--text-dark); margin-top:0.2rem;">0</div>
+              </div>
+              <div
+                style="background:#fff; border:1px solid var(--border-light); border-radius:10px; padding:1.15rem; text-align:center; box-shadow:var(--shadow-sm);">
+                <div style="font-size:0.75rem; color:#64748b; font-weight:800; text-transform:uppercase;">Active Tickets</div>
+                <div id="statActiveTickets"
+                  style="font-size:1.8rem; font-weight:900; color:var(--cpx-red); margin-top:0.2rem;">0</div>
+              </div>
+              <div
+                style="background:#fff; border:1px solid var(--border-light); border-radius:10px; padding:1.15rem; text-align:center; box-shadow:var(--shadow-sm);">
+                <div style="font-size:0.75rem; color:#64748b; font-weight:800; text-transform:uppercase;">Total Spent</div>
+                <div id="statTotalSpent" style="font-size:1.8rem; font-weight:900; color:#059669; margin-top:0.2rem;">₹0</div>
+              </div>
+            </div>
+
+            <!-- Synchronized Tickets Box -->
+            <div
+              style="background:#fff; border:1px solid var(--border-light); border-radius:12px; padding:1.5rem; box-shadow:var(--shadow-sm);">
+              <div
+                style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem; padding-bottom:0.75rem; border-bottom:1px solid #f1f5f9; flex-wrap:wrap; gap:0.5rem;">
+                <div>
+                  <h3 style="font-size:1.1rem; font-weight:900; color:var(--text-dark); margin:0;">Synchronized M-Tickets</h3>
+                  <div style="font-size:0.78rem; color:#64748b;">Live tickets linked to this browser profile from database</div>
+                </div>
+                <div style="display:flex; gap:0.5rem;">
+                  <button class="btn-bms-red" style="font-size:0.78rem; padding:0.4rem 0.8rem;"
+                    onclick="switchView('movies')">+ Book More</button>
+                  <button class="btn-bms-red"
+                    style="background:#f1f5f9; color:#334155; font-size:0.78rem; padding:0.4rem 0.8rem;"
+                    onclick="switchView('bookings')">All Bookings</button>
+                </div>
+              </div>
+
+              <!-- List container -->
+              <div id="accUserBookingsList" style="display:flex; flex-direction:column; gap:0.85rem;"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- =========================================================================
+       VIEW 4: MANAGEMENT PORTAL & INTERACTIVE SQL ENGINE
+       ========================================================================= -->
+  <div id="adminView" style="display:none;">
+    <main class="bms-container" style="max-width:1320px; margin-top:1.5rem; margin-bottom:3rem;">
+
+      <!-- Top Admin Header -->
+      <div
+        style="background:linear-gradient(135deg, #0f172a, #1e293b); color:#fff; border-radius:12px; padding:1.5rem 2rem; margin-bottom:1.5rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; border-left:5px solid var(--cpx-red); box-shadow:var(--shadow-md);">
+        <div>
+          <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.25rem;">
+            <svg class="cpx-icon cpx-icon-lg" style="color:var(--cpx-red);"><use href="#icon-shield"></use></svg>
+            <h1 style="font-size:1.6rem; font-weight:900; margin:0; letter-spacing:-0.02em;">CINEPLEX Administration &amp; Management Portal</h1>
+          </div>
+          <p style="font-size:0.85rem; color:#cbd5e1; margin:0;">Real-time management of Movie Catalogue, Auditorium Scheduling, Data Integrity &amp; Live SQL Engine.</p>
+        </div>
+        <div style="display:flex; gap:0.6rem; align-items:center;">
+          <span style="background:rgba(16,185,129,0.2); color:#34d399; font-size:0.75rem; font-weight:800; padding:0.35rem 0.75rem; border-radius:20px; border:1px solid rgba(16,185,129,0.4);">
+            ● Data Integrity Verified
+          </span>
+          <button class="btn-bms-red" style="background:rgba(255,255,255,0.15); color:#fff; border:1px solid rgba(255,255,255,0.3); display:flex; align-items:center; gap:0.4rem;" onclick="refreshAdminData()">
+            <svg class="cpx-icon cpx-icon-sm"><use href="#icon-refresh"></use></svg> Refresh Stats
+          </button>
+          <button class="btn-bms-red" style="background:#f1f5f9; color:#0f172a; display:flex; align-items:center; gap:0.4rem;" onclick="switchView('movies')">
+            <svg class="cpx-icon cpx-icon-sm"><use href="#icon-arrow-left"></use></svg> Home
+          </button>
+        </div>
+      </div>
+
+      <!-- ADMIN METRICS OVERVIEW -->
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:1rem; margin-bottom:1.5rem;" id="adminMetricsGrid">
+        <div class="admin-card-stat">
+          <span class="stat-lbl">Gross Net Revenue</span>
+          <span class="stat-val" id="admStatRevenue" style="color:#059669;">₹0</span>
+        </div>
+        <div class="admin-card-stat">
+          <span class="stat-lbl">Tickets Sold</span>
+          <span class="stat-val" id="admStatTickets" style="color:var(--cpx-red);">0</span>
+        </div>
+        <div class="admin-card-stat">
+          <span class="stat-lbl">Active Theaters</span>
+          <span class="stat-val" id="admStatTheaters">10</span>
+        </div>
+        <div class="admin-card-stat">
+          <span class="stat-lbl">Total Movies</span>
+          <span class="stat-val" id="admStatMovies">24</span>
+        </div>
+        <div class="admin-card-stat">
+          <span class="stat-lbl">Scheduled Shows</span>
+          <span class="stat-val" id="admStatShows">2,100</span>
+        </div>
+        <div class="admin-card-stat">
+          <span class="stat-lbl">Cancellations</span>
+          <span class="stat-val" id="admStatCancellations" style="color:#e11d48;">0</span>
+        </div>
+      </div>
+
+      <!-- ADMIN TABS -->
+      <div style="background:#fff; border:1px solid var(--border-light); border-radius:12px; overflow:hidden; box-shadow:var(--shadow-sm);">
+        <div style="display:flex; border-bottom:2px solid #f1f5f9; background:#f8fafc; overflow-x:auto;">
+          <button class="admin-tab-btn active" id="admTabBtnDbms" onclick="switchAdminTab('dbms')"
+            style="padding:0.9rem 1.4rem; background:none; border:none; font-weight:800; font-size:0.88rem; cursor:pointer; color:var(--cpx-red); border-bottom:3px solid var(--cpx-red); white-space:nowrap; display:flex; align-items:center; gap:0.4rem;">
+            <svg class="cpx-icon cpx-icon-sm"><use href="#icon-terminal"></use></svg> Interactive SQL Console
+          </button>
+          <button class="admin-tab-btn" id="admTabBtnMovies" onclick="switchAdminTab('movies')"
+            style="padding:0.9rem 1.4rem; background:none; border:none; font-weight:800; font-size:0.88rem; cursor:pointer; color:#64748b; border-bottom:3px solid transparent; white-space:nowrap; display:flex; align-items:center; gap:0.4rem;">
+            <svg class="cpx-icon cpx-icon-sm"><use href="#icon-film"></use></svg> Movie Management
+          </button>
+          <button class="admin-tab-btn" id="admTabBtnTheaters" onclick="switchAdminTab('theaters')"
+            style="padding:0.9rem 1.4rem; background:none; border:none; font-weight:800; font-size:0.88rem; cursor:pointer; color:#64748b; border-bottom:3px solid transparent; white-space:nowrap; display:flex; align-items:center; gap:0.4rem;">
+            <svg class="cpx-icon cpx-icon-sm"><use href="#icon-theater"></use></svg> Theatres &amp; Screens
+          </button>
+          <button class="admin-tab-btn" id="admTabBtnShows" onclick="switchAdminTab('shows')"
+            style="padding:0.9rem 1.4rem; background:none; border:none; font-weight:800; font-size:0.88rem; cursor:pointer; color:#64748b; border-bottom:3px solid transparent; white-space:nowrap; display:flex; align-items:center; gap:0.4rem;">
+            <svg class="cpx-icon cpx-icon-sm"><use href="#icon-clock"></use></svg> Shows &amp; Pricing
+          </button>
+          <button class="admin-tab-btn" id="admTabBtnBookings" onclick="switchAdminTab('bookings')"
+            style="padding:0.9rem 1.4rem; background:none; border:none; font-weight:800; font-size:0.88rem; cursor:pointer; color:#64748b; border-bottom:3px solid transparent; white-space:nowrap; display:flex; align-items:center; gap:0.4rem;">
+            <svg class="cpx-icon cpx-icon-sm"><use href="#icon-ticket"></use></svg> Bookings &amp; Verified Payments
+          </button>
+          <button class="admin-tab-btn" id="admTabBtnCancellations" onclick="switchAdminTab('cancellations')"
+            style="padding:0.9rem 1.4rem; background:none; border:none; font-weight:800; font-size:0.88rem; cursor:pointer; color:#64748b; border-bottom:3px solid transparent; white-space:nowrap; display:flex; align-items:center; gap:0.4rem;">
+            <svg class="cpx-icon cpx-icon-sm"><use href="#icon-close"></use></svg> Cancellation Audit
+          </button>
+          <button class="admin-tab-btn" id="admTabBtnUsers" onclick="switchAdminTab('users')"
+            style="padding:0.9rem 1.4rem; background:none; border:none; font-weight:800; font-size:0.88rem; cursor:pointer; color:#64748b; border-bottom:3px solid transparent; white-space:nowrap; display:flex; align-items:center; gap:0.4rem;">
+            <svg class="cpx-icon cpx-icon-sm"><use href="#icon-users"></use></svg> Registered Users
+          </button>
+        </div>
+
+        <div style="padding:1.5rem;">
+
+          <!-- TAB 1: DBMS LIVE SQL VIVA CONSOLE -->
+          <div id="admSectionDbms" style="display:block;">
+            <div style="margin-bottom:1.25rem;">
+              <h3 style="font-size:1.15rem; font-weight:900; color:var(--text-dark); margin-bottom:0.35rem;">
+                Interactive SQL Query Showcase
+              </h3>
+              <p style="font-size:0.84rem; color:#64748b;">
+                Click any pre-curated query below to execute live against SQLite. Demonstrates 3NF Normalization, Multi-Table INNER JOINs, GROUP BY &amp; HAVING, Correlated Subqueries, Aggregate Functions, and Transaction Integrity.
+              </p>
+            </div>
+
+            <!-- Pre-curated Query Buttons -->
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:0.65rem; margin-bottom:1.25rem;" id="dbmsPresetButtons">
+              <!-- Rendered dynamically by loadDbmsPresets() -->
+            </div>
+
+            <!-- SQL Query Input Box -->
+            <div style="margin-bottom:1rem;">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
+                <label style="font-size:0.8rem; font-weight:800; color:#334155;">SQL Query (Read-Only Safety Guard Enabled):</label>
+                <span id="sqlExecutionStatus" style="font-size:0.75rem; color:#059669; font-weight:700;"></span>
+              </div>
+              <textarea id="sqlConsoleInput" rows="5"
+                style="width:100%; font-family:monospace; font-size:0.85rem; padding:0.85rem; border:1px solid #cbd5e1; border-radius:6px; background:#0f172a; color:#f8fafc; outline:none; resize:vertical;"
+                placeholder="SELECT * FROM bookings LIMIT 5;"></textarea>
+            </div>
+
+            <div style="display:flex; gap:0.6rem; margin-bottom:1.5rem;">
+              <button class="btn-bms-red" style="padding:0.6rem 1.5rem; font-size:0.9rem; display:flex; align-items:center; gap:0.4rem;" onclick="executeAdminSqlQuery()">
+                <svg class="cpx-icon cpx-icon-sm"><use href="#icon-play"></use></svg> Run Query Live
+              </button>
+              <button class="btn-bms-red" style="background:#f1f5f9; color:#334155;" onclick="clearAdminSqlConsole()">
+                Clear Console
+              </button>
+            </div>
+
+            <!-- Query Results Table -->
+            <div style="overflow-x:auto; border:1px solid var(--border-light); border-radius:8px; max-height:440px; background:#fff;">
+              <table class="admin-table" id="sqlResultTable">
+                <thead>
+                  <tr><th>Result</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td style="color:#64748b; padding:1.5rem; text-align:center;">Select or write a query above and click "Run Query Live" to inspect results.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- TAB 2: MOVIE MANAGEMENT -->
+          <div id="admSectionMovies" style="display:none;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.25rem; flex-wrap:wrap; gap:0.75rem;">
+              <div>
+                <h3 style="font-size:1.15rem; font-weight:900; color:var(--text-dark); margin:0;">Catalogue Management</h3>
+                <p style="font-size:0.82rem; color:#64748b; margin:0.2rem 0 0 0;">Add new movie titles or toggle status between "Now Showing" and "Upcoming".</p>
+              </div>
+              <button class="btn-bms-red" style="display:flex; align-items:center; gap:0.4rem;" onclick="toggleAddMovieForm()">
+                <svg class="cpx-icon cpx-icon-sm"><use href="#icon-plus"></use></svg> Add New Movie
+              </button>
+            </div>
+
+            <!-- Add Movie Form (Collapsible) -->
+            <div id="admAddMovieForm" style="display:none; background:#f8fafc; border:1px solid var(--border-light); border-radius:8px; padding:1.25rem; margin-bottom:1.5rem;">
+              <h4 style="font-size:0.95rem; font-weight:800; margin-bottom:0.75rem;">Add Movie to Catalogue</h4>
+              <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:0.75rem; margin-bottom:0.75rem;">
+                <input type="text" class="bms-input" id="admNewTitle" placeholder="Movie Title (e.g. Kantara A Legend)">
+                <input type="text" class="bms-input" id="admNewLanguage" placeholder="Language (e.g. Hindi, Odia)">
+                <input type="text" class="bms-input" id="admNewCert" placeholder="Certification (e.g. UA 16+)" value="UA 16+">
+                <input type="number" class="bms-input" id="admNewRuntime" placeholder="Runtime (mins)" value="150">
+                <input type="number" step="0.1" class="bms-input" id="admNewRating" placeholder="Rating (e.g. 8.8)" value="8.8">
+              </div>
+              <textarea class="bms-input" id="admNewOverview" rows="2" placeholder="Brief Movie Synopsis / Overview"></textarea>
+              <div style="display:flex; gap:0.6rem;">
+                <button class="btn-bms-red" onclick="submitNewMovie()">Save Movie</button>
+                <button class="btn-bms-red" style="background:#e2e8f0; color:#334155;" onclick="toggleAddMovieForm()">Cancel</button>
+              </div>
+            </div>
+
+            <div style="overflow-x:auto;">
+              <table class="admin-table" id="admTableMovies">
+                <thead>
+                  <tr>
+                    <th>ID</th><th>Poster</th><th>Title</th><th>Language</th><th>Rating</th><th>Status</th><th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="admTableMoviesBody"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- TAB 3: THEATRES & SCREENS -->
+          <div id="admSectionTheaters" style="display:none;">
+            <div style="margin-bottom:1.25rem;">
+              <h3 style="font-size:1.15rem; font-weight:900; color:var(--text-dark); margin:0;">Cineplex Theatre Network</h3>
+              <p style="font-size:0.82rem; color:#64748b; margin:0.2rem 0 0 0;">Configured multiplexes, screen auditoriums, and sound hardware across Odisha &amp; Metros.</p>
+            </div>
+            <div style="overflow-x:auto;">
+              <table class="admin-table">
+                <thead>
+                  <tr><th>ID</th><th>Cinema Name</th><th>City</th><th>Address</th><th>Screens</th><th>Active Shows</th></tr>
+                </thead>
+                <tbody id="admTableTheatersBody"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- TAB 4: SHOWS & PRICING -->
+          <div id="admSectionShows" style="display:none;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.25rem; flex-wrap:wrap; gap:0.75rem;">
+              <div>
+                <h3 style="font-size:1.15rem; font-weight:900; color:var(--text-dark); margin:0;">Showtimes &amp; Seating Pricing</h3>
+                <p style="font-size:0.82rem; color:#64748b; margin:0.2rem 0 0 0;">View active show inventory and ticket pricing tiers across Recliner, Prime &amp; Classic.</p>
+              </div>
+            </div>
+            <div style="overflow-x:auto;">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Show ID</th><th>Movie</th><th>Theater</th><th>Auditorium</th><th>Date</th><th>Time</th><th>Pricing (VIP/Prime/Exec)</th><th>Booked / Total</th>
+                  </tr>
+                </thead>
+                <tbody id="admTableShowsBody"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- TAB 5: BOOKINGS & VERIFIED PAYMENTS -->
+          <div id="admSectionBookings" style="display:none;">
+            <div style="margin-bottom:1.25rem;">
+              <h3 style="font-size:1.15rem; font-weight:900; color:var(--text-dark); margin:0;">All Booking Transactions</h3>
+              <p style="font-size:0.82rem; color:#64748b; margin:0.2rem 0 0 0;">Comprehensive audit of user reservations with verified payment references.</p>
+            </div>
+            <div style="overflow-x:auto;">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Booking Ref</th><th>Customer</th><th>Movie</th><th>Cinema</th><th>Date/Time</th><th>Seats</th><th>Amount</th><th>Method</th><th>Status</th>
+                  </tr>
+                </thead>
+                <tbody id="admTableBookingsBody"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- TAB 6: CANCELLATIONS AUDIT -->
+          <div id="admSectionCancellations" style="display:none;">
+            <div style="margin-bottom:1.25rem;">
+              <h3 style="font-size:1.15rem; font-weight:900; color:var(--text-dark); margin:0;">Cancellation &amp; Refund Ledger</h3>
+              <p style="font-size:0.82rem; color:#64748b; margin:0.2rem 0 0 0;">Auditing refunded amounts and retained ₹30/seat cancellation fees according to policy.</p>
+            </div>
+            <div style="overflow-x:auto;">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Cancel ID</th><th>Booking Ref</th><th>Customer</th><th>Original Amt</th><th>Fee Deducted</th><th>Net Refund</th><th>Status</th><th>Timestamp</th>
+                  </tr>
+                </thead>
+                <tbody id="admTableCancellationsBody"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- TAB 7: USERS MANAGEMENT -->
+          <div id="admSectionUsers" style="display:none;">
+            <div style="margin-bottom:1.25rem;">
+              <h3 style="font-size:1.15rem; font-weight:900; color:var(--text-dark); margin:0;">User Accounts &amp; Customer Ledger</h3>
+              <p style="font-size:0.82rem; color:#64748b; margin:0.2rem 0 0 0;">Registered accounts and lifetime spending records.</p>
+            </div>
+            <div style="overflow-x:auto;">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>User ID</th><th>Name</th><th>Email</th><th>Phone</th><th>Role</th><th>Total Bookings</th><th>Total Spend</th><th>Registered</th>
+                  </tr>
+                </thead>
+                <tbody id="admTableUsersBody"></tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- =========================================================================
+       MODALS
+       ========================================================================= -->
+
+  <!-- MODAL 1: MOVIE DETAILS & AUDITORIUM SHOWTIMES -->
+  <div class="modal-backdrop" id="movieDetailModal">
+    <div class="modal-window">
+      <div class="modal-header">
+        <div class="modal-title" id="modalMovieTitle">Movie Details</div>
+        <button class="modal-close" onclick="closeModal('movieDetailModal')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="bms-detail-top">
+          <img class="detail-poster" id="detailPoster" src="" alt="Poster">
+          <div>
+            <h2 id="detailTitle" style="font-size:1.75rem; font-weight:900; color:var(--text-dark); margin-bottom:0.35rem;"></h2>
+            <div style="display:flex; gap:0.5rem; align-items:center; margin-bottom:0.75rem; flex-wrap:wrap;">
+              <span id="detailRating" style="font-weight:900; color:var(--cpx-red); font-size:1rem;"></span>
+              <span class="detail-meta-pill" id="detailCert"></span>
+              <span class="detail-meta-pill" id="detailRuntime"></span>
+              <span class="detail-meta-pill" id="detailLang"
+                style="background:#ecfdf5; color:#047857; font-weight:800;"></span>
+            </div>
+            <p id="detailGenres" style="color:#64748b; font-size:0.85rem; margin-bottom:0.75rem; font-weight:700;"></p>
+            <p id="detailOverview" style="font-size:0.9rem; line-height:1.5; color:#334155; margin-bottom:1.25rem;"></p>
+            <button
+              style="background:#fff; border:1px solid var(--cpx-red); color:var(--cpx-red); padding:0.45rem 1rem; border-radius:6px; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:0.4rem;"
+              id="detailBtnTrailer">
+              <svg class="cpx-icon cpx-icon-sm"><use href="#icon-play"></use></svg> Watch Trailer
+            </button>
+          </div>
+        </div>
+
+        <h3 style="font-size:1rem; font-weight:900; color:var(--text-dark); margin-bottom:0.6rem;">Select Show Date</h3>
+        <div class="date-scroller" id="dateScroller"></div>
+
+        <div style="display:flex; align-items:center; justify-content:space-between; margin:0.85rem 0 0.65rem 0;">
+          <h3 style="font-size:1rem; font-weight:900; color:var(--text-dark); margin:0; display:flex; align-items:center; gap:0.4rem;">
+            <svg class="cpx-icon cpx-icon-sm" style="color:var(--cpx-red);"><use href="#icon-theater"></use></svg> Cinemas &amp; Showtimes
+          </h3>
+          <span
+            style="font-size:0.78rem; color:var(--cpx-red); font-weight:800; background:#ffe4e6; padding:0.25rem 0.65rem; border-radius:20px; border:1px solid #fecdd3;">
+            Click a showtime to select seats &rarr;
+          </span>
+        </div>
+        <div id="theatersContainer"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 2: CURVED AUDITORIUM SEAT MAP -->
+  <div class="modal-backdrop" id="seatmapModal">
+    <div class="modal-window seatmap-window">
+      <div class="modal-header">
+        <div>
+          <div class="modal-title" id="seatmapMovieTitle">Select Seats</div>
+          <div style="font-size:0.8rem; color:#64748b;" id="seatmapMeta"></div>
+        </div>
+        <button class="modal-close" onclick="closeModal('seatmapModal')">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="screen-arch-wrap">
+          <div class="screen-arch"></div>
+          <div class="screen-label">── All eyes this way please ── SCREEN ──</div>
+        </div>
+
+        <div class="bms-legend">
+          <div><span class="legend-box avail"></span> Available</div>
+          <div><span class="legend-box sel"></span> Selected</div>
+          <div><span class="legend-box sold"></span> Booked</div>
+        </div>
+
+        <div id="seatRowsContainer"></div>
+      </div>
+
+      <div class="seatmap-bottom-bar">
+        <div>
+          <div style="font-size:0.72rem; color:#64748b; margin-bottom:0.3rem;">Selected Seats</div>
+          <div id="selectedSeatsPills"><span style="color:#94a3b8;font-size:0.8rem;">Tap a seat to select</span></div>
+        </div>
+        <div style="display:flex; align-items:center; gap:1rem;">
+          <div style="text-align:right;">
+            <div style="font-size:0.72rem; color:#64748b;">Subtotal</div>
+            <div id="selectedSeatsPrice" style="font-size:1.35rem; font-weight:900; color:var(--text-dark);">₹0</div>
+          </div>
+          <button class="btn-bms-red" id="btnProceedCheckout" onclick="proceedToCheckout()" disabled
+            style="padding:0.75rem 1.5rem; font-size:0.9rem; opacity:0.45;">
+            Select Seats
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 3: SNACKS & PAYMENT CHECKOUT -->
+  <div class="modal-backdrop" id="checkoutModal">
+    <div class="modal-window" style="max-width:860px;">
+      <div class="modal-header">
+        <div>
+          <div class="modal-title">CINEPLEX Checkout</div>
+          <span
+            style="font-size:0.75rem; color:#b45309; background:#fef3c7; padding:0.2rem 0.55rem; border-radius:4px; font-weight:800; border:1px solid #fde68a; display:inline-flex; align-items:center; gap:0.3rem;">
+            <svg class="cpx-icon cpx-icon-xs" style="color:#b45309;"><use href="#icon-timer"></use></svg> Seats held for <span class="reservation-timer-display">5:00</span> min
+          </span>
+        </div>
+        <button class="modal-close" onclick="closeModal('checkoutModal')">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="bms-checkout-grid">
+          <div>
+            <h3 style="font-size:1rem; font-weight:900; color:var(--text-dark); margin-bottom:0.25rem; display:flex; align-items:center; gap:0.4rem;">
+              <svg class="cpx-icon cpx-icon-sm" style="color:var(--cpx-red);"><use href="#icon-popcorn"></use></svg> Concessions &amp; Bites
+            </h3>
+            <p style="font-size:0.8rem; color:#64748b; margin-bottom:0.85rem;">Fresh warm butter popcorn, combos &amp; chilled fountain drinks.</p>
+            <div id="checkoutSnacksContainer" style="max-height:360px; overflow-y:auto;"></div>
+          </div>
+
+          <div>
+            <div class="bms-bill-box">
+              <h4 id="checkoutMovieTitle" style="font-size:1.1rem; font-weight:900; color:var(--text-dark); margin-bottom:0.2rem;"></h4>
+              <div id="checkoutMeta" style="font-size:0.8rem; color:#64748b; margin-bottom:0.4rem;"></div>
+              <div id="checkoutSeatsBadge" class="seat-pill-tag" style="display:inline-block; margin-bottom:0.85rem;"></div>
+
+              <div class="bill-row"><span>Ticket Price</span><span id="billTicketSubtotal">₹0.00</span></div>
+              <div class="bill-row"><span>Food &amp; Beverages</span><span id="billSnacksTotal">₹0.00</span></div>
+              <div class="bill-row"><span>Integrated Convenience Fee (5%)</span><span id="billConvenienceFee">₹0.00</span></div>
+              <div class="bill-row"><span>GST (18% on fee)</span><span id="billTaxes">₹0.00</span></div>
+              <div class="bill-row total"><span>Amount Payable</span><span id="billGrandTotal"
+                  style="color:var(--cpx-red);">₹0.00</span></div>
+            </div>
+
+            <div style="margin-top:1rem;">
+              <h4 style="font-size:0.85rem; font-weight:800; color:#334155; margin-bottom:0.4rem;">Contact Details (for Digital M-Ticket)</h4>
+              <input type="text" class="bms-input" id="custName" placeholder="Full Name" value="Sumit Kumar Panigrahi"
+                pattern="[A-Za-z].*" maxlength="60" title="Name must start with a letter"
+                oninput="validateNameInput(this)">
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.5rem;">
+                <input type="email" class="bms-input" id="custEmail" placeholder="Email Address"
+                  value="sumit@example.com">
+                <input type="tel" class="bms-input" id="custPhone" placeholder="10-digit Mobile Number"
+                  value="" inputmode="numeric" maxlength="13" pattern="[0-9]{10}"
+                  title="Enter 10-digit mobile number" oninput="validatePhoneInput(this)">
+              </div>
+            </div>
+
+            <div style="margin-top:0.75rem;">
+              <h4 style="font-size:0.85rem; font-weight:800; color:#334155; margin-bottom:0.4rem;">Simulated Payment Mode</h4>
+              <div style="display:flex; gap:0.5rem; margin-bottom:0.6rem;">
+                <button type="button" class="btn-bms-red payment-tab-btn" onclick="selectPaymentMethod('UPI', this)"
+                  style="background:#059669;">UPI (GPay / PhonePe / Paytm)</button>
+                <button type="button" class="btn-bms-red payment-tab-btn" onclick="selectPaymentMethod('Card', this)"
+                  style="background:#475569;">Credit / Debit Card</button>
+              </div>
+              <div id="payFieldsUpi">
+                <input type="text" class="bms-input" placeholder="Enter UPI VPA (e.g. sumit@okaxis)" value="sumit@cpxupi">
+              </div>
+              <div id="payFieldsCard" style="display:none;">
+                <input type="text" class="bms-input" placeholder="Card Number (4532 •••• •••• 9821)">
+              </div>
+            </div>
+
+            <button type="button" class="btn-bms-red" id="btnSubmitPayment" onclick="processPayment()"
+              style="width:100%; padding:0.85rem; font-size:1rem; font-weight:900; margin-top:0.85rem;">
+              Pay <span id="payBtnAmount">₹0.00</span> &amp; Confirm
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 4: CINEPLEX DIGITAL M-TICKET PASS -->
+  <div class="modal-backdrop" id="ticketModal">
+    <div class="modal-window" style="max-width:480px; background:transparent; box-shadow:none;">
+      <div style="display:flex; justify-content:flex-end; margin-bottom:0.5rem;">
+        <button class="modal-close" onclick="closeModal('ticketModal')"
+          style="color:#fff; font-size:2rem;">&times;</button>
+      </div>
+
+      <div class="bms-ticket-card" id="printableTicket">
+        <div class="bms-ticket-top">
+          <div style="display:flex; align-items:center; gap:0.6rem;">
+            <div style="background:var(--cpx-red); color:#fff; font-weight:900; font-size:0.75rem; padding:0.2rem 0.5rem; border-radius:4px; letter-spacing:0.05em;">CINEPLEX</div>
+            <div>
+              <div style="font-size:0.68rem; text-transform:uppercase; letter-spacing:0.06em; color:#94a3b8; font-weight:800;">
+                DIGITAL M-TICKET PASS
+              </div>
+              <div style="font-size:1.1rem; font-weight:900; color:#fff;" id="ticketRef"></div>
+            </div>
+          </div>
+          <span class="bms-status-badge confirmed">Confirmed</span>
+        </div>
+
+        <div class="bms-ticket-body">
+          <div style="display:flex; gap:1rem; align-items:flex-start; margin-bottom:1rem;">
+            <img id="ticketPoster" src="" alt="Poster"
+              style="width:72px; height:104px; border-radius:8px; object-fit:cover; box-shadow:var(--shadow-sm); flex-shrink:0; border:1px solid #e2e8f0;">
+            <div style="min-width:0; flex:1;">
+              <h3 id="ticketTitle"
+                style="font-size:1.2rem; font-weight:900; color:var(--text-dark); line-height:1.25; margin-bottom:0.25rem; word-break:break-word;"></h3>
+              <div style="font-size:0.78rem; color:#64748b; font-weight:700;" id="ticketLang"></div>
+              <div style="font-size:0.85rem; color:var(--text-dark); font-weight:800; margin-top:0.35rem;" id="ticketDate"></div>
+            </div>
+          </div>
+
+          <div class="ticket-tear">
+            <span class="tear-notch left"></span>
+            <span class="tear-line"></span>
+            <span class="tear-notch right"></span>
+          </div>
+
+          <div
+            style="display:grid; grid-template-columns:1.2fr 0.8fr; gap:0.75rem; font-size:0.85rem; margin-bottom:0.85rem;">
+            <div>
+              <span style="color:#64748b; font-size:0.72rem; display:block; font-weight:800; text-transform:uppercase; letter-spacing:0.04em;">THEATRE &amp; SCREEN</span>
+              <strong id="ticketCinema" style="color:var(--text-dark); font-size:0.9rem; word-break:break-word; display:block;"></strong>
+              <div id="ticketScreen" style="font-size:0.78rem; color:#475569; font-weight:600; margin-top:2px;"></div>
+            </div>
+            <div>
+              <span style="color:#64748b; font-size:0.72rem; display:block; font-weight:800; text-transform:uppercase; letter-spacing:0.04em;">SEAT(S)</span>
+              <strong id="ticketSeats" style="font-size:1.15rem; color:var(--cpx-red); font-weight:900; word-break:break-word; display:block;"></strong>
+            </div>
+          </div>
+
+          <div
+            style="display:flex; justify-content:space-between; align-items:center; border-top:1px dashed #cbd5e1; padding-top:0.65rem; font-size:0.85rem;">
+            <span>Customer: <strong id="ticketHolder" style="color:#1e293b;"></strong></span>
+            <span>Total Paid: <strong id="ticketAmount" style="color:#059669; font-size:1.1rem; font-weight:900;"></strong></span>
+          </div>
+
+          <div style="text-align:center; margin-top:1.1rem; padding-top:0.9rem; border-top:1px solid #f1f5f9;">
+            <div id="ticketQrContainer"
+              style="display:inline-block; padding:0.5rem; background:#fff; border:1px solid #cbd5e1; border-radius:6px;">
+            </div>
+            <div style="font-size:0.72rem; color:#64748b; margin-top:0.35rem; font-weight:600;">
+              Scan at cinema turnstiles • Valid on show date only
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ticket-actions no-print" style="display:flex; gap:0.5rem; margin-top:1rem; flex-wrap:wrap;">
+        <button class="btn-bms-red" style="flex:1; background:#0f172a; padding:0.65rem; font-size:0.85rem; font-weight:800; display:flex; align-items:center; justify-content:center; gap:0.4rem;" onclick="printMTicket()">
+          <svg class="cpx-icon cpx-icon-sm"><use href="#icon-printer"></use></svg> Print Ticket
+        </button>
+        <button class="btn-bms-red" style="flex:1; background:#0284c7; padding:0.65rem; font-size:0.85rem; font-weight:800; display:flex; align-items:center; justify-content:center; gap:0.4rem;" onclick="downloadTicketPDF()">
+          <svg class="cpx-icon cpx-icon-sm"><use href="#icon-pdf"></use></svg> Download PDF
+        </button>
+        <button class="btn-bms-red" style="flex:1; background:#fff; color:#be123c; border:1px solid #f43f5e; padding:0.65rem; font-size:0.85rem; font-weight:800; display:flex; align-items:center; justify-content:center; gap:0.4rem;" id="ticketBtnCancel">
+          <svg class="cpx-icon cpx-icon-sm"><use href="#icon-close"></use></svg> Cancel Ticket
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 5: CANCELLATION REVIEW -->
+  <div class="modal-backdrop" id="cancelModal">
+    <div class="modal-window" style="max-width:500px;">
+      <div class="modal-header">
+        <div class="modal-title" style="color:#be123c;">Cancel Ticket Reservation</div>
+        <button class="modal-close" onclick="closeModal('cancelModal')">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <div style="background:#fff1f2; border:1px solid #fecdd3; border-radius:6px; padding:1rem; margin-bottom:1rem;">
+          <h4 id="cancelMovieTitle" style="font-size:1rem; font-weight:800; color:#9f1239;"></h4>
+          <div id="cancelShowDetails" style="font-size:0.8rem; color:#475569; margin-top:0.25rem;"></div>
+          <div style="font-size:0.85rem; margin-top:0.35rem;">
+            Seats: <strong id="cancelSeats" style="color:var(--cpx-red);"></strong>
+          </div>
+        </div>
+
+        <div style="margin-bottom:1rem;">
+          <h4 style="font-size:0.85rem; font-weight:800; color:#334155; margin-bottom:0.4rem;">Select Reason</h4>
+          <select id="cancelReason" class="bms-input">
+            <option value="Change of plans">Change of plans</option>
+            <option value="Booked incorrect showtime">Booked incorrect showtime</option>
+            <option value="Booked incorrect seats">Booked incorrect seats</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="bms-bill-box" style="margin-bottom:1.25rem;">
+          <div class="bill-row"><span>Original Amount Paid</span><span id="cancelOriginalAmount">₹0.00</span></div>
+          <div class="bill-row"><span>Cancellation Fee (₹30.00 / seat)</span><span id="cancelFee"
+              style="color:#be123c;">-₹0.00</span></div>
+          <div class="bill-row total"><span>Net Estimated Refund</span><span id="cancelRefundAmount"
+              style="color:#059669;">₹0.00</span></div>
+        </div>
+
+        <p style="font-size:0.75rem; color:#64748b; margin-bottom:1.25rem;">
+          * In accordance with Cineplex Transparent Cancellation Policy, refund will be credited to the original payment source. Cancelled seats are immediately returned to auditorium seating inventory.
+        </p>
+
+        <div style="display:flex; gap:0.6rem;">
+          <button class="btn-bms-red" style="flex:1; background:#be123c;" onclick="confirmCancellation()">
+            Confirm Cancellation
+          </button>
+          <button class="btn-bms-red" style="flex:1; background:#f1f5f9; color:#334155;"
+            onclick="closeModal('cancelModal')">
+            Keep My Tickets
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 6: CANCELLATION SUMMARY -->
+  <div class="modal-backdrop" id="afterCancellationModal">
+    <div class="modal-window" style="max-width:520px;">
+      <div class="modal-header">
+        <div style="display:flex; align-items:center; gap:0.5rem;">
+          <svg style="width:20px;height:20px;color:#059669;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+          </svg>
+          <span class="modal-title">Cancellation Summary</span>
+        </div>
+        <button class="modal-close" onclick="closeModal('afterCancellationModal')">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <div style="text-align:center; margin-bottom:1rem;">
+          <div
+            style="width:48px; height:48px; border-radius:50%; background:#ecfdf5; border:2px solid #10b981; display:flex; align-items:center; justify-content:center; margin:0 auto 0.5rem auto;">
+            <svg style="width:24px;height:24px;color:#059669;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <h3 style="font-size:1.25rem; font-weight:900; color:var(--text-dark);">Refund Credited to Original Source</h3>
+          <p style="font-size:0.8rem; color:#64748b;">Your reservation has been cancelled and refund initiated.</p>
+        </div>
+
+        <div class="bms-refund-box">
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.65rem; font-size:0.85rem;">
+            <div><span style="color:#64748b; font-size:0.7rem; display:block; font-weight:700;">CANCELLATION ID</span><strong
+                id="afterCancelRef" style="color:var(--text-dark);"></strong></div>
+            <div><span style="color:#64748b; font-size:0.7rem; display:block; font-weight:700;">BOOKING REF</span><span
+                id="afterCancelBookingRef" style="color:#475569;"></span></div>
+            <div><span style="color:#64748b; font-size:0.7rem; display:block; font-weight:700;">MOVIE</span><strong id="afterCancelMovie"
+                style="color:var(--text-dark);"></strong></div>
+            <div><span style="color:#64748b; font-size:0.7rem; display:block; font-weight:700;">CINEMA</span><span id="afterCancelShow"
+                style="color:#475569;"></span></div>
+            <div
+              style="grid-column:1/-1; border-top:1px dashed #cbd5e1; padding-top:0.6rem; display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-weight:800;">Net Refund Amount Credited:</span>
+              <strong id="afterCancelRefund" style="color:#059669; font-size:1.25rem;"></strong>
+            </div>
+          </div>
+        </div>
+
+        <div
+          style="background:#ecfdf5; border:1px solid #a7f3d0; border-radius:6px; padding:0.75rem 1rem; display:flex; align-items:center; gap:0.65rem; margin-bottom:1rem;">
+          <svg style="width:20px;height:20px;color:#059669;flex-shrink:0;" fill="none" stroke="currentColor"
+            viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <div style="font-size:0.8rem; color:#065f46;">
+            <strong>Seats Released:</strong> Seats <span id="afterCancelSeats" style="font-weight:800;"></span> have
+            been returned into the auditorium and are now available for other moviegoers.
+          </div>
+        </div>
+
+        <div class="bms-timeline">
+          <div class="timeline-step">
+            <div class="timeline-dot"></div>
+            <div style="font-size:0.85rem; font-weight:800; color:var(--text-dark);">1. Ticket Cancelled</div>
+            <div style="font-size:0.75rem; color:#64748b;" id="afterCancelDate">Just now</div>
+          </div>
+          <div class="timeline-step">
+            <div class="timeline-dot"></div>
+            <div style="font-size:0.85rem; font-weight:800; color:var(--text-dark);">2. Seats Returned to Seating Inventory</div>
+            <div style="font-size:0.75rem; color:#64748b;">Auditorium seat map updated immediately</div>
+          </div>
+          <div class="timeline-step">
+            <div class="timeline-dot"></div>
+            <div style="font-size:0.85rem; font-weight:800; color:var(--text-dark);">3. Refund Initiated</div>
+            <div style="font-size:0.75rem; color:#64748b;">Original UPI / Card payment source</div>
+          </div>
+        </div>
+
+        <div style="display:flex; gap:0.75rem;">
+          <button class="btn-bms-red" style="flex:1;"
+            onclick="closeModal('afterCancellationModal'); switchView('movies');">Book Another Movie</button>
+          <button class="btn-bms-red" style="flex:1; background:#f1f5f9; color:#334155;"
+            onclick="closeModal('afterCancellationModal')">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 7: TMDB CLOUD SYNC -->
+  <div class="modal-backdrop" id="tmdbConfigModal">
+    <div class="modal-window" style="max-width:480px;">
+      <div class="modal-header">
+        <div class="modal-title">TMDB Movie API Sync</div>
+        <button class="modal-close" onclick="closeModal('tmdbConfigModal')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size:0.85rem; color:#475569; margin-bottom:1rem;">
+          Cineplex is integrated with TMDB Movie Database API. Click below to trigger a live sync of verified official posters and backdrops with offline fallbacks.
+        </p>
+        <button class="btn-bms-red" style="width:100%; padding:0.75rem; font-size:0.9rem; font-weight:800; display:flex; align-items:center; justify-content:center; gap:0.4rem;" onclick="triggerTMDBSync()">
+          <svg class="cpx-icon cpx-icon-sm"><use href="#icon-refresh"></use></svg> Trigger Live Poster Sync Now
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 8: TRAILER -->
+  <div class="modal-backdrop" id="trailerModal">
+    <div class="modal-window" style="max-width:760px; background:#000;">
+      <div style="display:flex; justify-content:space-between; align-items:center; padding:0.75rem 1rem; color:#fff;">
+        <span id="trailerModalTitle" style="font-weight:800;">Official Movie Trailer</span>
+        <button onclick="closeTrailer()" style="background:none; border:none; color:#fff; font-size:1.5rem; cursor:pointer;">&times;</button>
+      </div>
+      <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden;">
+        <iframe id="trailerFrame" style="position:absolute; top:0; left:0; width:100%; height:100%; border:none;" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 9: LOGIN / REGISTER MODAL -->
+  <div class="modal-backdrop" id="authModal">
+    <div class="modal-window" style="max-width:420px;">
+      <div class="modal-header">
+        <div class="modal-title" id="authModalTitle">Sign In</div>
+        <button class="modal-close" onclick="closeModal('authModal')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div style="display:flex; border-bottom:2px solid #f1f5f9; margin-bottom:1.25rem;">
+          <button id="tabLogin" onclick="switchAuthTab('login')"
+            style="flex:1; padding:0.65rem; background:none; border:none; font-weight:800;
+                   font-size:0.9rem; cursor:pointer; color:var(--cpx-red); border-bottom:2px solid var(--cpx-red); margin-bottom:-2px;">
+            Sign In
+          </button>
+          <button id="tabRegister" onclick="switchAuthTab('register')"
+            style="flex:1; padding:0.65rem; background:none; border:none; font-weight:800;
+                   font-size:0.9rem; cursor:pointer; color:#64748b; border-bottom:2px solid transparent; margin-bottom:-2px;">
+            Register
+          </button>
+        </div>
+
+        <div id="loginForm">
+          <input type="email" class="bms-input" id="loginEmail" placeholder="Email Address"
+            style="margin-bottom:0.75rem;" value="sumit@example.com">
+          <div style="position:relative; margin-bottom:0.75rem;">
+            <input type="password" class="bms-input" id="loginPassword" placeholder="Password"
+              style="padding-right:2.5rem;" value="password123">
+            <span onclick="togglePwd('loginPassword',this)"
+              style="position:absolute; right:0.75rem; top:50%; transform:translateY(-50%); cursor:pointer; display:flex; align-items:center; user-select:none;">
+              <svg class="cpx-icon cpx-icon-sm" style="color:#64748b;"><use href="#icon-eye"></use></svg>
+            </span>
+          </div>
+          <button class="btn-bms-red" style="width:100%;padding:0.75rem;" onclick="authLogin()">Sign In</button>
+        </div>
+
+        <div id="registerForm" style="display:none;">
+          <input type="text" class="bms-input" id="regName" placeholder="Full Name (starts with a letter)"
+            style="margin-bottom:0.75rem;" oninput="validateNameInput(this)">
+          <input type="email" class="bms-input" id="regEmail" placeholder="Email Address"
+            style="margin-bottom:0.75rem;">
+          <input type="tel" class="bms-input" id="regPhone" placeholder="10-digit Mobile Number" inputmode="numeric"
+            maxlength="13" oninput="validatePhoneInput(this)" style="margin-bottom:0.75rem;">
+          <input type="password" class="bms-input" id="regPassword" placeholder="Password (min 6 chars)"
+            style="margin-bottom:0.75rem;">
+          <input type="password" class="bms-input" id="regConfirm" placeholder="Confirm Password"
+            style="margin-bottom:1rem;">
+          <button class="btn-bms-red" style="width:100%;padding:0.75rem;" onclick="authRegister()">Create Account</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer style="background:#0f172a; color:#94a3b8; padding:3rem 2rem 2rem 2rem; border-top:1px solid #1e293b; font-size:0.85rem;">
+    <div style="max-width:1320px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:2rem; margin-bottom:2rem;">
+      <div>
+        <div class="cpx-logo-text" style="margin-bottom:0.5rem;">
+          <span class="logo-cine">CINE</span><span class="logo-plex">PLEX</span>
+        </div>
+        <p style="color:#64748b; font-size:0.8rem; line-height:1.5;">
+          Your Movies. Your Moments.<br>
+          A premier movie ticket booking platform built with high-performance relational database architecture, atomicity, and real-time seating inventory.
+        </p>
+      </div>
+      <div>
+        <h4 style="color:#fff; font-size:0.95rem; font-weight:800; margin-bottom:0.75rem;">Management &amp; Tools</h4>
+        <div style="display:flex; flex-direction:column; gap:0.4rem;">
+          <a href="javascript:void(0)" onclick="switchView('admin'); switchAdminTab('dbms')" style="color:#cbd5e1; display:flex; align-items:center; gap:0.4rem;">
+            <svg class="cpx-icon cpx-icon-xs"><use href="#icon-terminal"></use></svg> Interactive SQL Console
+          </a>
+          <a href="javascript:void(0)" onclick="switchView('admin'); switchAdminTab('movies')" style="color:#cbd5e1; display:flex; align-items:center; gap:0.4rem;">
+            <svg class="cpx-icon cpx-icon-xs"><use href="#icon-film"></use></svg> Management Catalogue Manager
+          </a>
+          <a href="javascript:void(0)" onclick="switchView('bookings')" style="color:#cbd5e1; display:flex; align-items:center; gap:0.4rem;">
+            <svg class="cpx-icon cpx-icon-xs"><use href="#icon-ticket"></use></svg> User Purchase History &amp; M-Tickets
+          </a>
+          <a href="javascript:void(0)" onclick="openModal('tmdbConfigModal')" style="color:#cbd5e1; display:flex; align-items:center; gap:0.4rem;">
+            <svg class="cpx-icon cpx-icon-xs"><use href="#icon-cloud"></use></svg> TMDB Cloud Sync
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4 style="color:#fff; font-size:0.95rem; font-weight:800; margin-bottom:0.75rem;">Platform Architecture</h4>
+        <p style="color:#64748b; font-size:0.8rem; line-height:1.5;">
+          <strong>Developer:</strong> Sumit Kumar Panigrahi<br>
+          <strong>Database:</strong> SQLite 3 Relational Engine with Foreign Keys &amp; Constraints<br>
+          <strong>Backend:</strong> Python Flask REST APIs<br>
+          <strong>Frontend:</strong> Responsive HTML5, CSS3 Grid/Flexbox, ES6 JavaScript
+        </p>
+      </div>
+    </div>
+    <div style="max-width:1320px; margin:0 auto; padding-top:1.5rem; border-top:1px solid #1e293b; text-align:center; font-size:0.75rem; color:#64748b;">
+      © 2026 CINEPLEX Movie Ticket Reservation System • Built by Sumit Kumar Panigrahi • Production Verified
+    </div>
+  </footer>
+
+  <script src="/static/app.js?v=2.3"></script>
+</body>
+
+</html>

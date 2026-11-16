@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+*.egg-info/
+dist/
+build/
+
+# Flask / Runtime
+instance/
+.env
+.flaskenv
+*.cfg
+!app.cfg
+
+# SQLite (keep cinema.db — it's the seeded demo database)
+# cinema.db   <-- intentionally NOT ignored; ships with the demo data
+
+# Backups / temp
+backup_pre_cineplex/
+*.bak
+*.tmp
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log

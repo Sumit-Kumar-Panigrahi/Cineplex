@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg_n" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="nacho_c" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="100%" stop-color="#eab308"/>
+    </linearGradient>
+    <linearGradient id="cheese" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+  </defs>
+  <rect width="300" height="300" rx="16" fill="url(#bg_n)"/>
+  <circle cx="150" cy="150" r="110" fill="#eab308" fill-opacity="0.1"/>
+  
+  <!-- Nacho Chips -->
+  <polygon points="70,180 140,80 160,190" fill="url(#nacho_c)" stroke="#ca8a04" stroke-width="2"/>
+  <polygon points="120,195 210,100 230,205" fill="url(#nacho_c)" stroke="#ca8a04" stroke-width="2"/>
+  <polygon points="90,210 180,120 190,225" fill="#fef08a" stroke="#ca8a04" stroke-width="2"/>
+  
+  <!-- Cheese Dip Bowl -->
+  <ellipse cx="205" cy="210" rx="45" ry="18" fill="#334155" stroke="#475569" stroke-width="2"/>
+  <ellipse cx="205" cy="208" rx="40" ry="14" fill="url(#cheese)"/>
+  <!-- Jalapeño slice -->
+  <circle cx="195" cy="207" r="6" fill="#15803d"/>
+  <circle cx="215" cy="209" r="5" fill="#15803d"/>
+  
+  <text x="150" y="278" font-family="-apple-system, sans-serif" font-size="13" font-weight="800" fill="#f8fafc" text-anchor="middle" letter-spacing="1">CHEESE NACHOS</text>
+</svg>
